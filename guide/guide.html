@@ -1,0 +1,485 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Personal Page</title>
+    	<link rel="stylesheet"  href="css/guide.css">
+    	<script src="js/jquery.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<h1>Build a Personal Page</h1>
+				<h2>Tutorial</h2>
+
+				<div class="steps">
+					<ul class="steps-list">
+						<li class="focus" rel="step1"><strong>Step 1:</strong> Setting up your workspace</li>
+						<li rel="step2"><strong>Step 2:</strong> Creating your html document</li>
+						<li rel="step3"><strong>Step 3:</strong> Building the top</li>
+						<li rel="step4"><strong>Step 4:</strong> Adding your personal information</li>
+						<li rel="step5"><strong>Step 5:</strong> Adding your resume</li>
+					</ul>
+				</div>
+			</header>
+
+
+			<section id="step" class="step" rel="step1">
+				<div class="step-title">
+					Setting up your workspace
+				</div>
+				<p class="warning">
+					Before starting this tutorial make sure that you have <a href="http://www.sublimetext.com/3" target="_blank">Sublime text</a> downloaded (or any other text editor if you have one) and <a href="http://www.google.com/chrome/" target="_blank">Google Chrome</a>.These tools will help you build your page and debug any errors you may have along the way.
+				</p>
+				<p>
+					First thing we need to do is create a folder for our webpage. On your desktop or in your documents folder create a new folder and name it "website", or any other name you like. Inside this folder you're going to create two more folders and name them "css" and  "img". These two folders will help you keep your page organized by storing images in the img folder and your stylesheets in the css folder.
+				</p>
+
+				<p>
+					Now open up Sublime and select File > Open [or use CMND + O if you are on a Mac - CTRL +O if you are using Windows]. Select your "website" and click open to open the whole project folder in sublime. When you have done this your sublime text editor should look like this:<br>
+
+					<img src="img/sublime1.png" class="img1">
+				</p>
+				<p>
+					All that's left to do is create our html and css files. Select File > New [CMND+N on Mac, CTRL+N on Windows] to create a new file. For now just save this file in your "website" folder and name it "page.html". To create your css file, create a new file and save it in your css folder with the name "styles.css".
+				</p>
+				<div class="nav">
+					<div class="dir">
+					&nbsp;
+						<!-- <a rel="step2">Next</a> -->
+					</div>
+					<div class="dir next">
+						<a class="next-step" rel="step2">Next</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="step" class="step" rel="step2" style="display:none">
+				<div class="step-title">
+					Creating Your HTML Document
+				</div>
+
+				<p>
+					Html organizes code by using tags that look something like this &lt;html&gt;. All content in an html document must be surrounded by an opening tag and it's corresponding closing tag, <i>i.e</i> &lt;html&gt;&lt;/html&gt;. To get our document organized so that a browser can understand it's content, create the following structure in your html page. <br><i>A note: Html ignores whitespace, but proper indenting makes code much more readable and can help you find errors quicker, just press the 'tab' key to create the space indenting</i>
+				</p>
+				<div class="code">
+					<div>&lt;!DOCTYPE html&gt;</div>
+					<div>&lt;html&gt;</div>
+					<div style="padding-left:2.5em">&lt;head&gt;</div>
+					<div style="padding-left:2.5em">&lt;/head&gt;</div>
+					<div style="padding-left:2.5em">&lt;body&gt;</div>
+					<div style="padding-left:2.5em">&lt;/body&gt;</div>
+					<div>&lt;/html&gt;</div>
+				</div>
+				<div class="sub-title">Linking your style sheet</div>
+				<p>
+					Even though there are no styles yet, it is important to link your style sheet to your html document at the start. This allows you to write your css in another file, keeping your code organized, while still being able to style the look of your page. So, inside your &lt;head&gt; tags add the following line of code.
+				</p>
+				<div class="code">
+					<div>...</div>
+					<div style="padding-left:2.5em">&lt;head&gt;</div>
+						<div style="padding-left:5em">&lt;link rel="stylesheet" href="css/styles.css" &gt;</div>
+					<div style="padding-left:2.5em">&lt;/head&gt;</div>
+
+					<div>...</div>
+				</div>
+				<p>
+					The href attribute in your <i>link</i> tag references the location of your style sheet based on the location of your html file. You'll also notice that the <i>link</i> tag does not have a closing &lt;/link&gt;. Though this breaks the normal convention of html it's considered a shorthand way of writing this tag. The reason being that you never actually write anything or place any additional tags between &lt;link&gt; &lt;/link&gt;. Because of this a browser understands not to require a closing tag. As a general rule, if you see this type of behaviour, it is normally tags that never have content written inside of them that are treated this way. <i>Another example is the &lt;img&gt; tag</i>.
+				</p>
+				<p>
+					That's it! Now you can go and start building your page.
+				</p>
+				<div class="nav">
+					<div class="dir">
+						<a class="next-step" rel="step1">Prev</a>
+					</div>
+					<div class="dir next">
+						<a class="next-step" rel="step3">Next</a>
+					</div>
+				</div>
+			</section>
+			<section id="step" class="step" rel="step3" style="display:none">
+				<div class="step-title">
+					Building the top
+				</div>
+				<p>
+					Before we get started, we're going add a couple styles to format the document. These styles clear up some default margins and apply some standard fonts and colours. You can always google some the names to find out more specifics. It's important to note the structure of CSS. The element you are targetting for styling is written out in full and the properties you give it are contained within the { } brackets. Properties are written out in the format propertyname:property;. <i>Note: semicolons denote the end of line like a period does for a sentance</i>. A full list of properties can be found <a href="http://htmldog.com/reference/cssproperties/" target="_blank">here</a><br>
+					So, in your styles.css document, add the following lines at the top:
+				</p>
+				<div class="code">
+					<div>html,body{</div>
+					<div style="padding-left:2.5em">height:100%;</div>
+					<div style="padding-left:2.5em">margin:0;</div>
+					<div style="padding-left:2.5em">background: #d8d8d8;</div>
+					<div>}</div>
+					<div>body{</div>
+					<div style="padding-left:2.5em">color:#58595b;</div>
+					<div style="padding-left:2.5em">font-family: "europa";</div>
+					<div style="padding-left:2.5em">font-weight: normal;</div>
+					<div style="padding-left:2.5em">font-style: normal;</div>
+					<div style="padding-left:2.5em">font-size: 100%;</div>
+					<div style="padding-left:2.5em">line-height: 1.5;</div>
+					<div style="padding-left:2.5em">position: relative;</div>
+					<div style="padding-left:2.5em">cursor: auto;</div>
+					<div style="padding-left:2.5em">letter-spacing: 0.05rem;</div>
+					<div style="padding-left:2.5em">-webkit-font-smoothing: subpixel-antialiased</div>
+					<div>}</div>
+				</div>
+				<div class="sub-title">Background Image</div>
+				<p>
+					First thing you are going to do is create a large background image that sits in its position while you scroll. Find an image you like and save it in your "img" folder. In your Html you're going to add the following tag between the <i>Body</i> tags:
+				</p>
+				<div class="code">
+					<div>...</div>
+					<div>&lt;body&gt;</div>
+						<div style="padding-left:2.5em">&lt;section class="top"&gt;&lt;/section&gt;</div>
+					<div>&lt;/body&gt;</div>
+					<div>...</div>
+				</div>
+				<p>
+					This will be our first introduction to using Id targeted styles in CSS. We gave the <i>section</i> tag an id called top. In our CSS file we're going add the following lines of code. The hashtag symbol denotes that we are going to be adding styles for elements with the id of "top".
+				</p>
+				<div class="code">
+					<div>#top{</div>
+						<div style="padding-left:2.5em">background:url('../img/empire.jpg');</div>
+						<div style="padding-left:2.5em">background-attachment: fixed;</div>
+						<div style="padding-left:2.5em">background-position:  bottom;</div>
+						<div style="padding-left:2.5em">background-size:cover;</div>
+						<div style="padding-left:2.5em">height:60%;</div>
+						<div style="padding-left:2.5em">width:100%;</div>
+					<div>}</div>
+				</div>
+				<p>
+					CSS syntax is somewhat easy to understand since the property names generally represent what they do. So, looking at background:url, you are going to replace empire.jpg with the name of your image. The '../' helps direct the path to the image. The image is in the img folder and the style sheet is in the css folder, using '../' tells the code to go <i>back</i> one folder to enter the website folder (referred to by programmers as the <i>root</i> folder) and then forwards into the <i>img </i>folder. Now if you double click your page.html file, it should open in the browser displaying your image. 
+				</p>
+
+				<div class="sub-title">Profle Image</div>
+
+				<p>
+					We're going to add another tag which will represent the contents of our resume. This will be referred to as a container since it will contain the next few blocks of code.Place the following line under the previous section.
+				</p>
+				<div class="code">
+					<div>...</div>
+					<div style="padding-left:2.5em">&lt;section class="top"&gt;&lt;/section&gt;</div>
+					<div style="padding-left:2.5em">&lt;section id="resume-container" class="profile clearfix"&gt;</div>
+					<br><br>
+					<div style="padding-left:2.5em">&lt;/section&gt;</div>
+					<div>...</div>
+				</div>
+				<p>
+					With clearfix and profile, you can see the first examples of class targetting with styles. It is typically more beneficial to use classes to style our elements than Id's. The reason being that elements can only have one Id but they can have multiple classes. This way we can add many different styles to one element through different classes. Classes are denoted with a period as a prefix in CSS. <i>Note: Clearfix is a style that helps parent elements clear their child elements, you can read more about it <a href="http://css-tricks.com/snippets/css/clear-fix/" target="_blank">here</a></i>
+				</p>
+				<div class="code">
+					<div>.clearfix:after {</div>
+					     <div style="padding-left:2.5em">visibility: hidden;</div>
+					     <div style="padding-left:2.5em">display: block;</div>
+					     <div style="padding-left:2.5em">font-size: 0;</div>
+					     <div style="padding-left:2.5em">content: " ";</div>
+					     <div style="padding-left:2.5em">clear: both;</div>
+					     <div style="padding-left:2.5em">height: 0;</div>
+					<div>}</div>
+					<div>.clearfix { display: inline-block; }</div>
+					<div>/* start commented backslash hack \*/</div>
+					<div>* html .clearfix { height: 1%; }</div>
+					<div>.clearfix { display: block; }</div>
+					<br>
+					<div>.profile{</div>
+						<div style="padding-left:2.5em">width:50em;</div>
+						<div style="padding-left:2.5em">background: white;</div>
+						<div style="padding-left:2.5em">margin:0 auto;</div>
+						<div style="padding-left:2.5em">position: relative;</div>
+						<div style="padding-left:2.5em">padding:0px 120px;</div>
+					<div>}</div>
+				</div>
+				<p>
+					Now we are to going to create the container that will hold our our profile image and tag line. The block of code below will create the html structure for this container and the image.
+				</p>
+				<div class="code">
+				<div>...</div>
+				<div>&lt;section id="resume-container" class="profile clearfix"&gt;</div>
+					<div style="padding-left:2.5em">&lt;div class="avatar-container"&gt;</div>
+						<div style="padding-left:5em">&lt;img class="avatar" src="img/avatar.png"&gt;</div>
+						<div style="padding-left:5em">&lt;div class="avatar-text"&gt;</div>
+							<div style="padding-left:7.5em">&lt;h1&gt;Rares Crisan&lt;/h1&gt;</div>
+							<div style="padding-left:7.55em">&lt;h2&gt;Developer | Student | Athlete &lt;/h2&gt;</div>
+						<div style="padding-left:5em">&lt;/div&gt;</div>
+					<div style="padding-left:2.5em">&lt;/div&gt;</div>
+				<div>&lt;/section&gt;</div>
+				<div>...</div>
+				</div>
+				<p>
+					In this block we can see the first set of tags that have actual text between them. There is also an <i>img</i> tag which is another example of a tag that doesn't require a closing tag. In the <i>src</i> attribute, replace the image with a picture of yourself that you will save into the img folder. Once you're done, we are going to add these styles to the classes above:
+				</p>
+				<div class="code">
+					<div>h1{</div>
+						<div style="padding-left:2.5em">color:#4fbfa6;</div>
+						<div style="padding-left:2.5em">font-size:18pt;</div>
+						<div style="padding-left:2.5em">font-weight:400;</div>
+						<div style="padding-left:2.5em">margin:0px;</div>
+
+					<div>}</div>
+					<div>h2{</div>
+						<div style="padding-left:2.5em">font-size:12pt;</div>
+						<div style="padding-left:2.5em">font-weight: 200;</div>
+						<div style="padding-left:2.5em">margin:0px;</div>
+
+					<div>}</div>
+					<div>.avatar-container{</div>
+						<div style="padding-left:2.5em">width:25em;</div>
+						<div style="padding-left:2.5em">text-align:center;</div>
+						<div style="padding-left:2.5em">position: absolute;</div>
+						<div style="padding-left:2.5em">left:50%;</div>
+						<div style="padding-left:2.5em">right:50%;</div>
+						<div style="padding-left:2.5em">top:-6em;</div>
+						<div style="padding-left:2.5em">margin-left:-12.5em;</div>
+					<div>}</div>
+
+					<div>.avatar-container img.avatar{</div>
+						<div style="padding-left:2.5em">width:12em;</div>
+						<div style="padding-left:2.5em">height:12em;</div>
+						<div style="padding-left:2.5em">border-radius:100%;</div>
+						<div style="padding-left:2.5em">margin-bottom:10px;</div>
+					<div>}</div>
+				</div>
+				<p>
+					There are a couple examples of more advanced CSS in the code above. The use of absolutely positioned elements allows us to take advantage of centering the container with left and right percentages. Since we know the width of the container is 25em, we can move it to the left half it's width to center it perfectly. You can read more on centering elements <a href="http://www.w3.org/Style/Examples/007/center.en.html" target="_blank">here</a>
+				</p>
+				<p>
+					With that we can move onto creating the left side of the resume.
+				</p>
+
+				<div class="nav">
+					<div class="dir">
+						<a class="next-step" rel="step2">Prev</a>
+					</div>
+					<div class="dir next">
+						<a class="next-step" rel="step4">Next</a>
+					</div>
+				</div>
+				
+			</section>
+			<section id="step" class="step" rel="step4" style="display:none">
+				<div class="step-title">
+					Adding your personal information
+				</div>
+				<p>
+					In this step we are going to create our first reusable block of code. Using html and css we will be able to apply this block of code to style multiple elements of text. Just below the avatar-container add this code:
+				</p>
+				<div class="code">
+					<div>&lt;article class="resume-left"&gt;</div>
+						<div style="padding-left:2.5em">&lt;div id="module" class="module"&gt;</div>
+							<div style="padding-left:5em">&lt;span class="title"&gt;Contact Information&lt;/span&gt;</div>
+							<div style="padding-left:5em">&lt;p&gt;</div>
+								<div style="padding-left:7.5em">647.518.5633 &lt;br&gt;</div>
+								<div style="padding-left:7.5em">r@gmail.com &lt;br&gt;</div>
+								<div style="padding-left:7.5em">http://rares.com &lt;br&gt;</div>
+							<div style="padding-left:5em">&lt;/p&gt;</div>
+						<div style="padding-left:2.5em">&lt;/div&gt;</div>
+					<div>&lt;/article&gt;</div>
+				</div>
+				<p>
+					Add the following styles as well:
+				</p>
+				<div class="code">
+					<div>.resume-left {</div>
+						<div style="padding-left:2.5em">float:left;</div>
+						<div style="padding-left:2.5em">width:50%;</div>
+						<div style="padding-left:2.5em">margin-top:200px;</div>
+					<div>}</div>
+					<div>#module{</div>
+						<div style="padding-left:2.5em">margin-bottom:30px;</div>
+					<div>}</div>
+					<div>#module .title,#module .sub-title{</div>
+						<div style="padding-left:2.5em">color:#4fbfa6;</div>
+						<div style="padding-left:2.5em">font-size:14pt;</div>
+						<div style="padding-left:2.5em">font-weight:400;</div>
+					<div>}</div>
+					<div>#module .sub-title{</div>
+						<div style="padding-left:2.5em">font-size:10pt;</div>
+					<div>}</div>
+					<div>#module p{</div>
+						<div style="padding-left:2.5em">font-weight:100;</div>
+						<div style="padding-left:2.5em">font-size:10pt;</div>
+						<div style="padding-left:2.5em">line-height:12pt;</div>
+						<div style="padding-left:2.5em">letter-spacing: 0.1rem;</div>
+						<div style="padding-left:2.5em">word-spacing: 0.1rem;</div>
+						<div style="padding-left:2.5em">text-rendering: optimizeLegibility;</div>
+						<div style="padding-left:2.5em">-webkit-font-smoothing: subpixel-antialiased</div>
+					<div>}</div>
+				</div>
+				<p>
+					Above you can see how to write css to apply the same set of properties to different classes. Farther down on the second and third set of styles you can see css's cascading style nature (<i>CSS stands for Cascading StyleSheet</i>). The font-size in the second assignment of .sub-title overwrites the first font-size of 14pt. The .sub-title class still inherits the color and the font-weight, but this way it is also able to have a different font-size. The last feature of CSS you can see in the code above is an example of CSS nesting. Nesting ensures that the properties are only applied to the class when they are a child of a parent element with the leading class or Id (it is an Id in this case). <i>You can read more about nesting <a href="http://www.htmldog.com/guides/css/intermediate/grouping/" target="_blank">here</a></i>
+				</p>
+				<p>
+					Now if we add this block of code after the first module, we will see it has the same styles.
+				</p>
+
+				<div class="code">
+					<div>&lt;article class="resume-left"&gt;</div>
+						<div style="padding-left:2.5em">&lt;div id="module" class="module"&gt;</div>
+							<div style="padding-left:5em">&lt;span class="title"&gt;Contact Information&lt;/span&gt;</div>
+							<div style="padding-left:5em">&lt;p&gt;</div>
+								<div style="padding-left:7.5em">647.518.5633 &lt;br&gt;</div>
+								<div style="padding-left:7.5em">r@gmail.com &lt;br&gt;</div>
+								<div style="padding-left:7.5em">http://rares.com &lt;br&gt;</div>
+							<div style="padding-left:5em">&lt;/p&gt;</div>
+						<div style="padding-left:2.5em">&lt;/div&gt;</div>
+						<br>
+						<div style="padding-left:2.5em">&lt;div id="module" class="module"&gt;</div>
+							<div style="padding-left:5em">&lt;span class="title"&gt;Address&lt;/span&gt;</div>
+							<div style="padding-left:5em">&lt;p&gt;</div>
+								<div style="padding-left:7.5em">67 Seaton Street &lt;br&gt;</div>
+								<div style="padding-left:7.5em">Toronto, Ontario&lt;br&gt;</div>
+								<div style="padding-left:7.5em">Canada &lt;br&gt;</div>
+							<div style="padding-left:5em">&lt;/p&gt;</div>
+						<div style="padding-left:2.5em">&lt;/div&gt;</div>
+					<div>&lt;/article&gt;</div>
+				</div>
+				<p>
+				We are going to use this same technique with the next module. Place the following code after the two previous modules.
+				</p>
+				<div class="code">
+					<div>&lt;div id="module2"&gt;</div>
+						<div style="padding-left:2.5em">&lt;div class="title">Affiliations&lt/div&gt;</div>
+						<br>
+						<div style="padding-left:2.5em">&lt;a href="http://brainstation.io/" target="_blank"&gt;</div>
+							<div style="padding-left:5em">&lt;img src="img/brainstation.jpeg"&gt;</div>
+						<div style="padding-left:2.5em">&lt;/a&gt;</div>
+						<br>
+						<div style="padding-left:2.5em">&lt;div class="content"&gt;</div>
+							<div style="padding-left:5em">&lt;a class="link" href="http://brainstation.io/" target="_blank"&gt;</div>
+								<div style="padding-left:7.5em">&lt;strong>BrainStation&lt;/strong></div>
+							<div style="padding-left:5em">&lt;/a&gt;</div>
+							<div style="padding-left:5em">&lt;br&gt;</div>
+							<div style="padding-left:5em">Lead Educator</div>
+						<div style="padding-left:2.5em">&lt;/div&gt;</div>
+					<div>&lt;/div&gt;</div>
+				</div>
+				<p> with the following CSS:</p>
+				<div class="code">
+					<div>#module2{</div>
+						<div style="padding-left:2.5em">border-top:1px solid #d8d8d8;</div>
+						<div style="padding-left:2.5em">border-bottom:1px solid #d8d8d8;</div>
+						<div style="padding-left:2.5em">padding:20px 0px;</div>
+						<div style="padding-left:2.5em">width:80%;</div>
+					<div>}</div>
+
+					<div>#module2 img{</div>
+						<div style="padding-left:2.5em">height:3em;</div>
+						<div style="padding-left:2.5em">border-radius: 100%;</div>
+						<div style="padding-left:2.5em">border:1px solid #d8d8d8;</div>
+						<div style="padding-left:2.5em">display: inline-block;</div>
+						<div style="padding-left:2.5em">vertical-align: middle;</div>
+					<div>}</div>
+
+					<div>#module2 .content{</div>
+						<div style="padding-left:2.5em">display: inline-block;</div>
+						<div style="padding-left:2.5em">margin-left:10px;</div>
+						<div style="padding-left:2.5em">vertical-align: middle;</div>
+						<div style="padding-left:2.5em">font-size:10pt;</div>
+						<div style="padding-left:2.5em">font-weight:200;</div>
+						<div style="padding-left:2.5em">line-height: 12pt;</div>
+					<div>}</div>
+				</div>
+				<p>
+					Above we see an example of overriding an elements default style. The browser naturally treats <i>img</i> and <i>div</i> tags as block elements, meaning they occupy the entire row they are in. When an inline-block property is applied to them it forces them to sit next to each other in the browser window. With vertical-align we inform the elements of how they should position next to each other.<i> You can read about display properties <a href="http://www.w3schools.com/cssref/pr_class_display.asp" target="_blank">here</a></i>
+				</p>
+				<p>
+					For the end of the page we're going to apply the same module but with a slight twist.
+				</p>
+				<div class="code">
+					<div>&lt;div id="module2"&gt;</div>
+						<div style="padding-left:2.5em">&lt;div class="title">Social&lt;/div&gt;</div>
+						<br>
+						<div style="padding-left:2.5em">&lt;a href="https://facebook.com/johndoe" target="_blank"&gt;</div>
+							<div style="padding-left:5em">&lt;div class="facebook social"&gt;&lt;/div&gt;</div>
+						<div style="padding-left:2.5em">&lt;/a&gt;</div>
+						<div style="padding-left:2.5em">&lt;a href="https://twitter.com/johndoe" target="_blank"&gt;</div>
+							<div style="padding-left:5em">&lt;div class="twitter social"&gt;&lt;/div&gt;</div>
+						<div style="padding-left:2.5em">&lt;/a&gt;</div>
+						<div style="padding-left:2.5em">&lt;a href="https://instagram.com/johndoe" target="_blank"&gt;</div>
+							<div style="padding-left:5em">&lt;div class="instagram social"&gt;&lt;/div&gt;</div>
+						<div style="padding-left:2.5em">&lt;/a&gt;</div>
+					<div>&lt;/div&gt;</div>
+				</div>
+				<p>
+				 	Add the following CSS to complement the new classes and elements:
+				</p>
+				<div class="code">
+					<div>#module2 .facebook{</div>
+						<div style="padding-left:2.5em">background: url('../img/facebook.png');</div>
+					<div>}</div>
+					<div>#module2 .twitter{</div>
+						<div style="padding-left:2.5em">background: url('../img/twitter.png');</div>
+					<div>}</div>
+					<div>#module2 .instagram{</div>
+						<div style="padding-left:2.5em">background: url('../img/instagram.png');</div>
+					<div>}</div>
+					<div>#module2 .social{</div>
+						<div style="padding-left:2.5em">display: inline-block;</div>
+						<div style="padding-left:2.5em">vertical-align: top;</div>
+						<div style="padding-left:2.5em">background-size: 50%;</div>
+						<div style="padding-left:2.5em">background-position: center;</div>
+						<div style="padding-left:2.5em">background-repeat: no-repeat;</div>
+						<div style="padding-left:2.5em">background-color: #4fbfa6;</div>
+						<div style="padding-left:2.5em">border-radius: 100%;</div>
+						<div style="padding-left:2.5em">height: 2.5em;</div>
+						<div style="padding-left:2.5em">width: 2.5em;</div>
+						<div style="padding-left:2.5em">border: none;</div>
+						<div style="padding-left:2.5em">margin-right: 5px;</div>
+					<div>}</div>
+				</div>
+				<p>
+					In this last module we can see how to use the anchor tag (<i>a</i>) to link to another webpage. Lastly with the CSS we can see how nexting works to apply its properties to multiple elements.
+				</p>
+				<p>
+					Last step is to finish the right side.
+				</p>
+				<div class="nav">
+					<div class="dir">
+						<a class="next-step" rel="step3">Prev</a>
+					</div>
+					<div class="dir next">
+						<a class="next-step" rel="step5">Next</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="step" class="step" rel="step5" style="display:none">
+				<div class="step-title">
+					Adding your resume
+				</div>
+				<p>
+					This step includes nothing new but only utilizes all the skills you have learned so far. Use the existing classes you have created to finish and add your resume. The only new elements and styles you require are listed below:
+				</p>
+				<div class="sub-title">Html</div>
+				<div class="code">
+					<div>&lt;article class="resume-right"&gt;</div>
+					<br><br>
+					<div>&lt;/article&gt;</div>
+				</div>
+				<div class="sub-title">css</div>
+				<div class="code">
+					<div>.resume-right {</div>
+						<div style="padding-left:2.5em">float:left;</div>
+						<div style="padding-left:2.5em">width:50%;</div>
+						<div style="padding-left:2.5em">margin-top:200px;</div>
+					<div>}</div>
+
+					<div>.module-right{</div>
+						<div style="padding-left:2.5em">border-left:2px solid #4fbfa6;</div>
+						<div style="padding-left:2.5em">padding-left:40px;</div>
+					<div>}</div>
+				</div>
+				<div class="nav">
+					<div class="dir">
+						<a class="next-step" rel="step4">Prev</a>
+					</div>
+					<div class="dir next">
+						<!-- <a class="next-step" rel="step">Next</a> -->
+					</div>
+				</div>
+			</section> 
+		</div>
+		<script src="js/function.js"></script>
+	</body>
+</html>
